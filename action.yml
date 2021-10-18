@@ -5,9 +5,12 @@ inputs:
         required: true
     latex-source:
         required: true
+    diff-from:
+        required: false
 runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
         - ${{ inputs.working-dir }}
         - ${{ inputs.latex-source }}
+        - ${{ inputs.diff-from}}
