@@ -10,7 +10,7 @@ See [action.yml](action.yml)
 steps:
 - uses: actions/checkout@v2
 
-- uses: midoriao/latex-action@master
+- uses: midoriao/latex-action@main
   with:
     working-dir: test
     latex-source: note.tex
@@ -28,7 +28,7 @@ steps:
   with:
     fetch-depth: 0  # to fetch the history
 
-- uses: midoriao/latex-action@master
+- uses: midoriao/latex-action@main
   with:
     working-dir: test
     latex-source: note.tex
