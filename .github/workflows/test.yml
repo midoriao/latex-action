@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  latex_compile_job:
+    runs-on: ubuntu-latest
+    name: latex compile job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Compile a document with bib
+        uses: ./
+        with:
+          working-dir: test
+          latex-source: note.tex
+      - name: Check pdf outputs
+        run: file test/note.pdf
+

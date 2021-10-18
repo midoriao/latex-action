@@ -1,0 +1,13 @@
+name: 'latex-action'
+description: 'Compile pdf from latex source'
+inputs:
+    working-dir:
+        required: true
+    latex-source:
+        required: true
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.working-dir }}
+        - ${{ inputs.latex-source }}
