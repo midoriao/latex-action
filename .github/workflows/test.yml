@@ -20,6 +20,13 @@ jobs:
           diff-from: e7239491e102a11316b60fb3addb0350e9ca4085
       - name: Check pdf outputs
         run: |
-            file test/note.pdf | grep -q ' PDF '
-            file test/note-diff.pdf | grep -q ' PDF '
+          file test/note.pdf | grep -q ' PDF '
+          file test/note-diff.pdf | grep -q ' PDF '
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiled_documents
+          path: |
+            test/note.pdf
+            test/note-diff.pdf
 
